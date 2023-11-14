@@ -1,0 +1,10 @@
+services:
+  frontend:
+    image: ghcr.io/zesty-surprise/feedback-frontend:master
+    pull_policy: always
+    container_name: frontend
+    environment:
+      BACKEND_URL: ${BACKEND_URL}
+      BACKEND_PORT: ${BACKEND_PORT}
+    ports:
+      - "3000:3000"
