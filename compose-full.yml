@@ -1,10 +1,16 @@
 services:
   backend:
-    image: ghcr.io/zesty-surprise/feedback-backend:main
+    image: ghcr.io/zesty-surprise/feedback-backend:develop
     pull_policy: always
     container_name: backend
     environment:
       - MONGODB_URL=mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongodb:27017/
+      - MAIL_USERNAME=
+      - MAIL_PASSWORD=""
+      - MAIL_FROM=
+      - MAIL_PORT=465
+      - MAIL_SERVER=smtp.gmail.com
+      - BACKEND_HOST=test.axelzublena.com
     ports:
       - "8000:8000"
     depends_on:
