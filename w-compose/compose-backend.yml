@@ -1,12 +1,29 @@
 services:
   backend:
-    image: ghcr.io/zesty-surprise/feedback-backend:main
-    pull_policy: always
+    # image: ghcr.io/zesty-surprise/feedback-backend:main
+    image: testback:test
+    pull_policy: if_not_present
     container_name: backend
     environment:
       - MONGODB_URL=mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongodb:27017/
+      - MAIL_USERNAME=axel.zublena.2
+      - MAIL_PASSWORD=""
+      - MAIL_FROM=axel.zublena.2@gmail.com
+      - MAIL_PORT=465
+      - MAIL_SERVER=smtp.gmail.com
+      - BACKEND_HOST=amp.test.axelzublena.com
+    # Not secure, only port 465 & 8000 should be open and mapped
+    # But avoid potential issue during development
     ports:
       - "8000:8000"
+      - "587:587"
+      - "25:25"
+      - "465:465"
+    expose:
+      - 8000
+      - 587
+      - 25
+      - 465
     depends_on:
       - mongodb
     networks:
