@@ -49,12 +49,13 @@ The frontend is available at https://github.com/Zesty-Surprise/feedback-frontend
 
 
 ## Environment variables details
-|    Variable   | Info                                                                                                                                                      |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MONGODB_URL   | Connection string for the MongoDB. Should have the following format `mongodb://$MONGO_USERNAME:$MONGO_PASSWORD@$ADDRESS:27017/`                           |
-| MAIL_USERNAME | Username of the Gmail account sending emails. Should be the string that prefixes `@` in an email address                                                    |
-| MAIL_PASSWORD | Unique password of the Gmail account sending emails. Can be obtained by following this guide: https://support.google.com/mail/answer/185833?hl=en        |
-| MAIL_FROM     | Sender's email address                                                                                                                                    |
-| MAIL_PORT     | This variable should be set to 465                                                                                                                        |
-| MAIL_SERVER   | SMTP server from which emails will be sent. `smtp.gmail.com` from Gmail                                                                                   |
-| BACKEND_HOST  | HTTPS domain name of the backend server. AMP requires HTTP requests to be secure with the backend. Should have the following format `mybackendserver.com` |
+|      Variable      | Info                                                                                                                                                      |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MONGODB_URL        | Connection string for the MongoDB. Should have the following format `mongodb://$MONGO_USERNAME:$MONGO_PASSWORD@$ADDRESS:27017/`                           |
+| MAIL_USERNAME      | Username of the Gmail account sending emails. Should be the string that prefixes `@` in an email address                                                  |
+| MAIL_PASSWORD      | Unique password of the Gmail account sending emails. Can be obtained by following this guide: https://support.google.com/mail/answer/185833?hl=en         |
+| MAIL_FROM          | Sender's email address                                                                                                                                    |
+| MAIL_PORT          | This variable should be set to 465                                                                                                                        |
+| MAIL_SERVER        | SMTP server from which emails will be sent. `smtp.gmail.com` from Gmail                                                                                   |
+| BACKEND_HOST       | HTTPS domain name of the backend server. AMP requires HTTP requests to be secure with the backend. Should have the following format `mybackendserver.com` |
+| PUBLIC_BACKEND_URI | For front-end: domain name of the backend server. Should have the following format `https://mybackendserver.com/api/`                                     |
